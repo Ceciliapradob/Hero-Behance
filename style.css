@@ -1,0 +1,619 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+
+}
+
+header {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.7)),
+    url('./images/hero.jpg');
+  background-position: center;
+  background-size: cover;
+  padding: 20px 0;
+  height: 500px;
+}
+
+.logo {
+  position: relative;
+}
+
+.banner {
+  width: 100%;
+  height: 200px;
+  /* Altura del banner */
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Opacidad del 50% */
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-bottom: 5px;
+}
+
+.text h2 {
+  margin: 0;
+  font-size: 40px;
+}
+
+.text p {
+  margin: 5px 0;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff9900;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 20px; /* Margen tanto del lado izquierdo como del lado derecho */
+  position: relative;
+ 
+}
+nav::after {
+  content: ""; /* Añade un contenido vacío */
+  position: absolute; /* Establece la posición absoluta para la línea */
+  bottom: 0; /* Coloca la línea en la parte inferior del nav */
+  left: 17.5%; /* Inicia la línea a partir del 10% del ancho del nav */
+  width: 65%; /* Ancho de la línea en el 80% del nav */
+  height: 1px; /* Grosor de la línea */
+  background-color: #ccc; /* Color de la línea */
+}
+
+.logo {
+  color: white;
+}
+
+.menu-items {
+  display: flex;
+}
+
+.menu-items a {
+  color: white;
+  margin-left: 20px; /* Espacio entre elementos del menú */
+  text-decoration: none;
+  
+  position: relative; /* Hace posible que se posicione la línea absolutamente */
+}
+
+.menu-items nav::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px; /* Posiciona la línea debajo del texto */
+  width: 100%;
+
+  
+  height: 1px; /* Grosor de la línea */
+  background-color: transparent;
+  transition: background-color 0.3s; /* Transición suave para el cambio de color */
+}
+
+.menu-items nav:hover::after {
+  background-color: yellow; /* Cambia el color de la línea al pasar el mouse */
+}
+
+.container {
+  margin-top: 15%;
+}
+
+/* Media Queries para dispositivos móviles y tabletas */
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  .text {
+    left: 5%;
+    width: 90%;
+    text-align: center;
+  }
+
+  .text h2 {
+    font-size: 24px;
+    /* Reducir tamaño de la tipografía */
+  }
+
+  .text p {
+    font-size: 16px;
+    /* Reducir tamaño de la tipografía */
+  }
+
+  .cta-button {
+    display: block;
+    margin: 10px auto;
+    width: 20%;
+    padding: 8px 16px;
+    /* Ajustar el padding del botón */
+    font-size: 16px;
+    /* Reducir tamaño de la tipografía */
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+}
+
+
+
+/*Estilo de primera seccion*/
+.container-img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.box img {
+  width: 400px;
+  height: 250px;
+  margin-right: 10%;
+}
+
+.box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.content {
+  margin-left: 15%;
+}
+
+
+/*IMG 2*/
+.container-img2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.box2 img {
+  width: 400px;
+  height: 250px;
+  margin-left: 40%;
+}
+
+.box2 {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row-reverse;
+}
+
+.content2 {
+  margin-right: 8%;
+}
+
+/*Queries seccion 1*/
+/* Consulta de medios para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+
+  /* Ancho y margen para las imágenes en dispositivos móviles */
+  .box img,
+  .box2 img {
+    margin-left: 0;
+    /* Eliminar margen izquierdo en dispositivos móviles */
+    margin-right: 0;
+    /* Eliminar margen derecho en dispositivos móviles */
+  }
+
+  /* Cambiar el diseño a columna en dispositivos móviles */
+  .box,
+  .box2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content,
+  .content2 {
+    margin: 0;
+    text-align: justify;
+  }
+}
+
+/*Seccion 2*/
+/* .seccion-sofa {
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)), url('./images/sala.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  margin-top: 5%;
+
+  color: white;
+  padding: 20px 0;
+  height: 500px;
+}
+
+.seccion-sofa p {
+  margin-top: 10%;
+  font-size: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+
+} */
+.seccion-sofa {
+  position: relative; /* Establece la posición relativa para permitir la superposición */
+  width: 100%;
+  margin-top: 5%;
+  height: 600px;
+  color: white;
+  padding: 20px 0;
+  margin-bottom: 0 !important; /* Anula cualquier margen adicional */
+ 
+}
+
+.seccion-sofa video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta el video para cubrir todo el contenedor */
+  
+}
+
+.seccion-sofa p {
+  position: absolute; /* Establece la posición absoluta para superponer el texto */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  z-index: 1; /* Asegura que el texto esté sobre el video */
+}
+
+.seccion-sofa::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Asegura que la capa esté detrás del video */
+ 
+}
+
+
+
+
+/*Seccion 3 secuencia imagenes*/
+
+.section-images {
+  background-color: rgb(0, 0, 81);
+  /* Fondo azul para toda la sección */
+  width: 100%;
+  /* Asegura que la sección ocupe todo el ancho disponible */
+  display: flex;
+  /* Establece la sección como un contenedor flexible */
+  flex-direction: column;
+
+  flex-wrap: wrap;
+  /* Permite que los elementos se envuelvan a una nueva línea cuando no haya espacio */
+
+ 
+
+}
+
+.image-section {
+  display: flex;
+  color: white;
+  margin: auto;
+  align-items: flex-start;
+  /* Alinea los elementos al inicio del contenedor */
+  margin-top: 5%;
+
+
+}
+
+.column {
+  display: flex;
+
+
+}
+
+.image {
+  margin-bottom: 20px;
+}
+
+.image img {
+  width: 300px;
+  height: 350px;
+}
+
+.caption {
+  text-align: justify;
+}
+
+.caption h3 {
+  margin: 10px 0;
+}
+
+.caption p {
+  margin: 5px 0;
+}
+
+.image2 {
+  margin-left: 21%;
+  margin-top: 30%;
+}
+
+.div {
+  margin-bottom: 5%;
+}
+
+/*QUERIES*/
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+  .image-section {
+    justify-content: center;
+    /* Centra el contenido en dispositivos móviles */
+  }
+
+  .column {
+    flex-direction: column;
+    /* Cambia la dirección a columna en dispositivos móviles */
+    align-items: center;
+    /* Centra los elementos en dispositivos móviles */
+  }
+
+  .image img {
+    width: 100%;
+    /* Ajusta el ancho de las imágenes al ancho del contenedor en dispositivos móviles */
+    height: auto;
+    /* Permite que la altura de las imágenes se ajuste proporcionalmente */
+  }
+
+  .image2 {
+    margin-left: 0;
+    /* Elimina el margen izquierdo en dispositivos móviles */
+    margin-top: 20px;
+    /* Reduce el margen superior en dispositivos móviles */
+  }
+}
+
+/* Estilos para tabletas */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .image-section {
+    justify-content: center;
+    /* Centra el contenido en tabletas */
+  }
+}
+
+/*Seccion 4*/
+.advantages-section {
+  text-align: center;
+
+  margin-top: 3%;
+
+}
+
+.section-title,
+.subtitle,
+.title h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.container4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 15%;
+}
+
+.box4 {
+  width: 200px;
+  margin: 20px;
+  padding: 20px;
+
+  text-align: center;
+}
+
+.box4 i {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.box4 h2 {
+  margin-bottom: 10px;
+}
+
+.box4 p {
+  margin: 0;
+}
+
+/*Seccion 5*/
+.project-section {
+  text-align: center;
+  background-color: rgb(234, 234, 234);
+  width: 100%;
+  padding: 10px;
+
+}
+
+.subtitle h2 {
+  margin-bottom: 10px;
+}
+
+.options-container {
+  width: 50%;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.options-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.options-container li {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.options-container li .bullet {
+  position: absolute;
+  left: -20px;
+}
+
+.options-container li .line {
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: calc(100% + 40px);
+  border-bottom: 1px solid #ccc;
+}
+
+.line {
+  width: 100%;
+  border: 1px solid black;
+  display: block;
+  margin-bottom: 1%;
+}
+
+/*Seccion 6*/
+.contact-section {
+  text-align: center;
+  margin-top: 3%;
+}
+
+.title {
+  margin-bottom: 7%;
+}
+
+.title h2 {
+  margin-bottom: 10px;
+}
+
+.title p {
+  margin: 5px 0;
+  font-size: 13px;
+  font-weight: 700;
+
+}
+
+.contact-form {
+  margin-top: 20px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  /* Ancho del formulario ajustado */
+  max-width: 400px;
+  /* Ancho máximo del formulario */
+  margin: 0 auto;
+  /* Centrado horizontalmente */
+}
+
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  height: 150px;
+}
+
+
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  /* Alineación a la izquierda */
+  margin-bottom: 10px;
+  /* Espacio entre el textarea y el botón */
+}
+
+.contact-form button {
+  padding: 10px 35px;
+  background-color: rgba(48, 21, 21, 0.458);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: darkbrown;
+}
+
+/*Pie de página*/
+footer {
+  padding: 20px;
+  background-color: rgb(234, 234, 234);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+ 
+
+}
+
+.footer-container {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.columnTitle {
+  width: 25%;
+}
+.columnFooter{
+  flex: 3rem;
+  margin-left:5% ;
+}
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.columnFooter ul li {
+  margin-bottom: 5px;
+  font-size: 13px;
+}
