@@ -21,9 +21,7 @@ header {
   height: 500px;
 }
 
-.logo {
-  position: relative;
-}
+
 
 .banner {
   width: 100%;
@@ -70,24 +68,6 @@ header {
   border-radius: 5px;
 }
 
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 20px; /* Margen tanto del lado izquierdo como del lado derecho */
-  position: relative;
- 
-}
-nav::after {
-  content: ""; /* Añade un contenido vacío */
-  position: absolute; /* Establece la posición absoluta para la línea */
-  bottom: 0; /* Coloca la línea en la parte inferior del nav */
-  left: 17.5%; /* Inicia la línea a partir del 10% del ancho del nav */
-  width: 65%; /* Ancho de la línea en el 80% del nav */
-  height: 1px; /* Grosor de la línea */
-  background-color: #ccc; /* Color de la línea */
-}
-
 .logo {
   color: white;
 }
@@ -98,31 +78,119 @@ nav::after {
 
 .menu-items a {
   color: white;
-  margin-left: 20px; /* Espacio entre elementos del menú */
+  margin-left: 20px;
+  /* Espacio entre elementos del menú */
   text-decoration: none;
-  
-  position: relative; /* Hace posible que se posicione la línea absolutamente */
+
+  position: relative;
+  /* Hace posible que se posicione la línea absolutamente */
 }
 
 .menu-items nav::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -10px; /* Posiciona la línea debajo del texto */
+  bottom: -10px;
+  /* Posiciona la línea debajo del texto */
   width: 100%;
 
-  
-  height: 1px; /* Grosor de la línea */
+
+  height: 1px;
+  /* Grosor de la línea */
   background-color: transparent;
-  transition: background-color 0.3s; /* Transición suave para el cambio de color */
+  transition: background-color 0.3s;
+  /* Transición suave para el cambio de color */
 }
 
 .menu-items nav:hover::after {
-  background-color: yellow; /* Cambia el color de la línea al pasar el mouse */
+  background-color: yellow;
+  /* Cambia el color de la línea al pasar el mouse */
 }
 
 .container {
   margin-top: 15%;
+}
+
+/*ESTILO NUEVO*/
+nav {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 10%;
+  align-items: center;
+  padding: 10px 20px;
+  /* Margen tanto del lado izquierdo como del lado derecho */
+  position: relative;
+
+}
+
+nav::after {
+  content: "";
+  /* Añade un contenido vacío */
+  position: absolute;
+  /* Establece la posición absoluta para la línea */
+  bottom: 0;
+  /* Coloca la línea en la parte inferior del nav */
+  left: 15%;
+  /* Inicia la línea a partir del 10% del ancho del nav */
+  width: 70%;
+  /* Ancho de la línea en el 80% del nav */
+  height: 1px;
+  /* Grosor de la línea */
+  background-color: #ccc;
+  /* Color de la línea */
+}
+.logo {
+  position: relative;
+}
+
+.logo-text,
+.menu-items {
+  color: #fff;
+  font-size: 18px;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .menu-items {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+
+    z-index: 1;
+  }
+
+  .menu-items.show {
+    display: flex;
+  }
+
+  .menu-items a {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+  .logo-text{
+    display: none;
+  }
 }
 
 /* Media Queries para dispositivos móviles y tabletas */
@@ -163,11 +231,18 @@ nav::after {
     align-items: center;
     margin-top: 20px;
   }
+  .logo-text{
+    display: none;
+  }
 }
 
 
 
-/*Estilo de primera seccion*/
+/* Estilo de primera seccion */
+.section-images-one {
+  margin-right: 5%;
+}
+
 .container-img {
   display: flex;
   flex-direction: column;
@@ -178,17 +253,58 @@ nav::after {
 .box img {
   width: 400px;
   height: 250px;
-  margin-right: 10%;
+  margin-right: 5%;
 }
 
-.box {
+.box,
+.box2 {
   display: flex;
   justify-content: space-around;
+
 }
 
-.content {
-  margin-left: 15%;
+
+
+.content h2 {
+  font-size: 20px;
+  text-align: center;
 }
+
+/* Ajustes para el texto en la primera sección */
+.container-img .content {
+  text-align: justify;
+  /* Justifica el texto */
+  margin-top: 10px;
+  /* Ajusta el espacio arriba del texto */
+}
+
+.container-img .content h3,
+.container-img .content p {
+  text-align: justify;
+  /* Centra el texto */
+  text-align: center;
+  /* Centra el título */
+  margin-left: 27%;
+  /* Añade un margen a la izquierda */
+}
+
+/* Ajustes para el texto en la segunda sección */
+.container-img2 .content2 {
+  text-align: justify;
+  /* Justifica el texto */
+  margin-top: 10px;
+  /* Ajusta el espacio arriba del texto */
+}
+
+.container-img2 .content2 h3,
+.container-img2 .content2 p {
+  text-align: center;
+  /* Centra el título */
+  margin-left: 10%;
+  /* Añade un margen a la izquierda */
+}
+
+
 
 
 /*IMG 2*/
@@ -202,7 +318,7 @@ nav::after {
 .box2 img {
   width: 400px;
   height: 250px;
-  margin-left: 40%;
+  margin-left: 20%;
 }
 
 .box2 {
@@ -212,20 +328,25 @@ nav::after {
 }
 
 .content2 {
-  margin-right: 8%;
+  margin-right: 0%;
 }
 
 /*Queries seccion 1*/
-/* Consulta de medios para dispositivos móviles */
-@media only screen and (max-width: 768px) {
 
-  /* Ancho y margen para las imágenes en dispositivos móviles */
+
+/* Media query para dispositivos con ancho máximo de 468px */
+/* Media query para dispositivos con ancho máximo de 468px */
+@media only screen and (max-width: 468px) {
+
+  /* Ajustes para las imágenes en dispositivos móviles */
   .box img,
   .box2 img {
-    margin-left: 0;
-    /* Eliminar margen izquierdo en dispositivos móviles */
-    margin-right: 0;
-    /* Eliminar margen derecho en dispositivos móviles */
+    width: 300px;
+    /* Ajustar el ancho de la imagen */
+    height: 188px;
+    /* Ajustar el alto de la imagen */
+    margin: 0 auto;
+    /* Centrar horizontalmente */
   }
 
   /* Cambiar el diseño a columna en dispositivos móviles */
@@ -233,14 +354,68 @@ nav::after {
   .box2 {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    /* Centrar verticalmente */
   }
 
   .content,
   .content2 {
     margin: 0;
-    text-align: justify;
+    text-align: center;
+    /* Centrar el texto */
+  }
+
+  .content2 {
+    margin-left: 0;
+    /* Ajuste hacia la izquierda */
   }
 }
+
+
+
+/*PARA TABLET¨/
+/* Media query para dispositivos con ancho máximo de 768px */
+
+/* Media query para dispositivos con ancho máximo de 768px */
+/* Media query para dispositivos con ancho máximo de 768px */
+/* Media query para dispositivos con ancho máximo de 768px */
+@media only screen and (min-width: 469px) and (max-width: 768px) {
+
+  /* Ajustes para las imágenes en dispositivos móviles */
+  .box img,
+  .box2 img {
+    width: 350px;
+    /* Ajustar el ancho de la imagen */
+    height: 219px;
+    /* Ajustar el alto de la imagen */
+    margin: 0 auto;
+    /* Centrar horizontalmente */
+  }
+
+  /* Cambiar el diseño a columna en dispositivos móviles */
+  .box,
+  .box2 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Centrar verticalmente */
+  }
+
+  .content,
+  .content2 {
+    margin: 0;
+    text-align: center;
+    /* Centrar el texto */
+  }
+
+  .content2 {
+    margin-left: 0;
+    /* Ajuste hacia la izquierda */
+  }
+}
+
+
+
 
 /*Seccion 2*/
 /* .seccion-sofa {
@@ -264,32 +439,37 @@ nav::after {
 
 } */
 .seccion-sofa {
-  position: relative; /* Establece la posición relativa para permitir la superposición */
+  position: relative;
+  /* Establece la posición relativa para permitir la superposición */
   width: 100%;
   margin-top: 5%;
   height: 600px;
   color: white;
   padding: 20px 0;
-  margin-bottom: 0 !important; /* Anula cualquier margen adicional */
- 
+  margin-bottom: 0 !important;
+  /* Anula cualquier margen adicional */
+
 }
 
 .seccion-sofa video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ajusta el video para cubrir todo el contenedor */
-  
+  object-fit: cover;
+  /* Ajusta el video para cubrir todo el contenedor */
+
 }
 
 .seccion-sofa p {
-  position: absolute; /* Establece la posición absoluta para superponer el texto */
+  position: absolute;
+  /* Establece la posición absoluta para superponer el texto */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 30px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
-  z-index: 1; /* Asegura que el texto esté sobre el video */
+  z-index: 1;
+  /* Asegura que el texto esté sobre el video */
 }
 
 .seccion-sofa::before {
@@ -299,8 +479,9 @@ nav::after {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Asegura que la capa esté detrás del video */
- 
+  z-index: 0;
+  /* Asegura que la capa esté detrás del video */
+
 }
 
 
@@ -320,7 +501,7 @@ nav::after {
   flex-wrap: wrap;
   /* Permite que los elementos se envuelvan a una nueva línea cuando no haya espacio */
 
- 
+
 
 }
 
@@ -585,7 +766,7 @@ footer {
   width: 100%;
   display: flex;
   justify-content: center;
- 
+
 
 }
 
@@ -593,16 +774,18 @@ footer {
   margin-top: 2%;
   display: flex;
   justify-content: center;
-  
+
 }
 
 .columnTitle {
   width: 25%;
 }
-.columnFooter{
+
+.columnFooter {
   flex: 3rem;
-  margin-left:5% ;
+  margin-left: 5%;
 }
+
 h3 {
   font-size: 18px;
   margin-bottom: 10px;
